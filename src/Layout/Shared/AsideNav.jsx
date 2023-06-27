@@ -6,32 +6,32 @@ import { ContactPage, Home, InfoOutlined, MiscellaneousServices, PostAdd, WebSto
 const AsideNav = () => {
     const asideLink=[
         {
-            path:'/',
+            path:'home',
             title:'Home',
             icon:<Home/>
         },
         {
-            path:'/about',
+            path:'about',
             title:'About Me',
             icon:<InfoOutlined/>
         },
         {
-            path:'/services',
+            path:'services',
             title:'Services',
             icon:<MiscellaneousServices/>
         },
         {
-            path:'/portfolio',
+            path:'portfolio',
             title:'Portfolio',
             icon:<WebStories/>
         },
         {
-            path:'/blog',
+            path:'blog',
             title:'Blog',
             icon:<PostAdd/>
         },
         {
-            path:'/contact',
+            path:'contact',
             title:'Contact',
             icon:<ContactPage/>
         }
@@ -60,7 +60,7 @@ const AsideNav = () => {
                 <Typography sx={{fontSize:'25px', color:'white', margin:'10px 0'}}>MD Asif</Typography>
                 {
                     asideLink.map(({path,title,icon})=>(
-                        <Link style={{textDecoration:'none'}} key={path} to={path}><NavLinksAll>{icon}{title}</NavLinksAll></Link>
+                        <a href={`/#${path}`} style={{textDecoration:'none'}} key={path}><NavLinksAll>{icon}{title}</NavLinksAll></a>
                     ))
                 }
             </Box>
