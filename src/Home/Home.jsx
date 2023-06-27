@@ -52,7 +52,7 @@ const Home = () => {
             <HomeText>
                 <Typography variant="h6" color='white'>Hello there...</Typography>
                 <Typography sx={{margin:'15px 0'}} variant="h2" color='white'>Ikbal Hossain Asif</Typography>
-                <Typography variant="h5" color='#4D4E4E'>I am propesonal <TypeAnimation
+                <Typography variant="h5" color='#4D4E4E'>I Am Professional <TypeAnimation
                     preRenderFirstString={true}
                     sequence={[
                         500,
