@@ -10,9 +10,9 @@ const About = () => {
 
     const AboutBody = styled(Box)(({ theme }) => ({
         backgroundColor: '#121212',
-        padding: '50px',
+        padding: '100px 50px',
         [theme.breakpoints.down('md')]:{
-            padding:'10px'
+            padding:'50px 10px'
         }
     }))
 
@@ -39,7 +39,8 @@ const About = () => {
         color: 'white',
         [theme.breakpoints.down('md')]:{
             width:'100%',
-            padding:'0px'
+            padding:'0px',
+            marginTop:'50px'
         }
     }))
 
@@ -73,15 +74,17 @@ const About = () => {
 
                     <Typography sx={{ textTransform: 'uppercase', color: '#969696', marginTop: '10px' }} paragraph>User Friendly? <span style={{ color: 'orangered' }}>Yes, It's my like</span></Typography>
 
-                    <Typography>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions. Check out my Portfolio</Typography>
+                    <Typography paragraph>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions. Check out my Portfolio</Typography>
 
                     <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                         <MyInfo>
                             <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '50%', [theme.breakpoints.down('md')]:{
                                 width:'100%',
-                                justifyContent:'space-around'
+                                justifyContent:'flex-start'
                             }}}>
-                                <Box>
+                                <Box sx={{[theme.breakpoints.down('md')]:{
+                                    marginRight:'15px'
+                                }}}>
                                     <Typography sx={{ fontWeight: 'bold', borderLeft: '2px solid orangered', paddingLeft: '10px',margin:'7px 0' }}>Birthday</Typography>
                                     <Typography sx={{ fontWeight: 'bold', borderLeft: '2px solid orangered', paddingLeft: '10px',margin:'7px 0' }}>Age </Typography>
                                     <Typography sx={{ fontWeight: 'bold', borderLeft: '2px solid orangered', paddingLeft: '10px',margin:'7px 0' }}>Residence </Typography>
@@ -94,9 +97,11 @@ const About = () => {
                             </Box>
                             <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '50%', [theme.breakpoints.down('md')]:{
                                 width:'100%',
-                                justifyContent:'space-around'
+                                justifyContent:'flex-start'
                             } }}>
-                                <Box>
+                                <Box sx={{[theme.breakpoints.down('md')]:{
+                                    marginRight:'15px'
+                                }}}>
                                     <Typography sx={{ fontWeight: 'bold', borderLeft: '2px solid orangered', paddingLeft: '10px',margin:'7px 0' }}>E-mail </Typography>
                                     <Typography sx={{ fontWeight: 'bold', borderLeft: '2px solid orangered', paddingLeft: '10px',margin:'7px 0' }}>Phone </Typography>
                                     <Typography sx={{ fontWeight: 'bold', borderLeft: '2px solid orangered', paddingLeft: '10px',margin:'7px 0' }}>Address </Typography>
