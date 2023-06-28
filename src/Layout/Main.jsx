@@ -3,6 +3,7 @@ import AsideNav from "./Shared/AsideNav";
 import { styled } from "@mui/system";
 import Home from "../Home/Home";
 import About from "../Pages/About";
+import Myskills from "../Pages/Myskills";
 import Services from "../Pages/Services";
 
 const Main = () => {
@@ -45,6 +46,7 @@ const Main = () => {
                 <Box>
                     <Home></Home>
                     <About></About>
+                    <Myskills></Myskills>
                     <Services></Services>
                 </Box>
             </MainBody>
