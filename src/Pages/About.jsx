@@ -1,7 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import HeaderTitle from "../components/HeaderTitle";
 import { styled } from "@mui/system";
-import myImg from '../../public/images/my-image.png'
+import myImg from '../../public/images/asifPNG.png'
 import CustomButton from "../components/CustomButton";
 
 const About = () => {
@@ -20,7 +20,7 @@ const About = () => {
         width: '40%',
         padding: '50px',
         display: 'flex',
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         justifyContent: 'center',
         [theme.breakpoints.down('md')]: {
             width: '100%',
@@ -30,17 +30,27 @@ const About = () => {
     }))
 
     const RawImg = styled('img')(({ theme }) => ({
-        width: '100%'
+        width: '100%',
+        backgroundColor:'white',
+        padding:'15px 15px 0px 15px',
+        borderRadius:'15px',
+        [theme.breakpoints.down('md')]:{
+            borderRadius:'0px'
+        }
     }))
 
     const AboutText = styled(Box)(({ theme }) => ({
         width: '60%',
         padding: '50px',
         color: 'white',
+        display:'flex',
+        alignItems:'flex-start',
+        justifyContent:'center',
+        flexDirection:'column',
         [theme.breakpoints.down('md')]:{
             width:'100%',
             padding:'0px',
-            marginTop:'50px'
+            marginTop:'50px',
         }
     }))
 

@@ -7,6 +7,7 @@ import Myskills from "../Pages/Myskills";
 import Services from "../Pages/Services";
 import Navbar, { NavContext } from "../components/Navbar";
 import { useContext } from "react";
+import Portfoilo from "../Pages/Portfoilo";
 
 const Main = () => {
 
@@ -57,6 +58,7 @@ const Main = () => {
                     <About></About>
                     <Myskills></Myskills>
                     <Services></Services>
+                    <Portfoilo></Portfoilo>
                 </Box>
             </MainBody>
         </FullBody>
