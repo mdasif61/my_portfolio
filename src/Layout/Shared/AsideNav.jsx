@@ -1,13 +1,12 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/system";
 import { Box, Typography } from "@mui/material";
-import { useLocation } from "react-router-dom";
 import { ContactPage, Home, InfoOutlined, MiscellaneousServices, PostAdd, WebStories } from "@mui/icons-material";
-import { useState } from "react";
+import { useContext } from "react";
+import { NavContext } from "../../components/Navbar";
 
 const AsideNav = () => {
-    const [nav,setNav]=useState('#home')
-    const location = useLocation();
-    const from = location.hash;
+
+    const {setOpen,open}=useContext(NavContext)
 
     const asideLink = [
         {
@@ -51,13 +50,9 @@ const AsideNav = () => {
         flexDirection: 'column',
         alignItems: 'center',
         padding: '10px 0',
-        // border:'2px solid #1E1E1E',
         borderRadius: '10px',
-        // '&:hover':{
-
-        // }
-        backgroundColor:nav===`${from}` ? '#3C3C3C':'transparent',
-        border:nav===`${from}`?'2px solid #4D4E4E':'none'
+        backgroundColor: '#3C3C3C',
+        border: '2px solid #4D4E4E',
 
     }))
 
@@ -67,7 +62,7 @@ const AsideNav = () => {
                 <Typography sx={{ fontSize: '25px', color: 'white', margin: '10px 0' }}>MD Asif</Typography>
                 {
                     asideLink.map(({ path, title, icon }) => (
-                        <a href={`/#${path}`} style={{ textDecoration: 'none' }} key={path}><NavLinksAll onClick={()=>setNav("#"+path)}>{icon}{title}</NavLinksAll></a>
+                        <a href={`/#${path}`} style={{ textDecoration: 'none' }} key={path}><NavLinksAll onClick={() => setOpen(!open)}>{icon}{title}</NavLinksAll></a>
                     ))
                 }
             </Box>

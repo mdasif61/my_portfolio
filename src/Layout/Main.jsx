@@ -5,8 +5,12 @@ import Home from "../Home/Home";
 import About from "../Pages/About";
 import Myskills from "../Pages/Myskills";
 import Services from "../Pages/Services";
+import Navbar, { NavContext } from "../components/Navbar";
+import { useContext } from "react";
 
 const Main = () => {
+
+    const {open}=useContext(NavContext)
 
     const FullBody = styled(Box)(() => ({
         display: 'flex',
@@ -24,18 +28,23 @@ const Main = () => {
         top: '0',
         padding: '20px',
         zIndex: '1',
+        borderRight: '2px solid white',
         [theme.breakpoints.down('md')]: {
-            position: 'absolute',
-            left: '-100px'
+            left: open?'0px':'-200px',
+            position:'fixed',
+            zIndex:'50',
+            width:'auto'
         }
     }))
 
-    const MainBody=styled(Box)(({theme})=>({
-        width:'93%',
-        [theme.breakpoints.down('md')]:{
-            width:'100%'
+    const MainBody = styled(Box)(({ theme }) => ({
+        width: '93%',
+        [theme.breakpoints.down('md')]: {
+            width: '100%',
+            position: 'relative'
         }
     }))
+
 
     return (
         <FullBody>
