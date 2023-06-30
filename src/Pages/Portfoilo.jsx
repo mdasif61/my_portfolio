@@ -8,11 +8,10 @@ import { useState } from "react";
 
 const Portfoilo = () => {
     const [show, setShow] = useState(false)
-    const [ids,setIds]=useState(null)
 
     const projects = [
         {
-            id:1,
+            id: 1,
             name: 'Photo Awesome',
             img: photoawesome,
             live: "https://photo-awesome-b8515.web.app/",
@@ -20,7 +19,7 @@ const Portfoilo = () => {
             code_server: "https://github.com/mdasif61/photo_awesome_server"
         },
         {
-            id:2,
+            id: 2,
             name: 'Sport&Special',
             img: sport,
             live: "https://sports-special-ca4dd.web.app/",
@@ -28,7 +27,7 @@ const Portfoilo = () => {
             code_server: "https://github.com/mdasif61/toy_server"
         },
         {
-            id:3,
+            id: 3,
             name: 'BrandFood.C',
             img: brandFood,
             live: "https://brand-food-b1948.web.app/",
@@ -42,7 +41,7 @@ const Portfoilo = () => {
         padding: '100px 50px',
         [theme.breakpoints.down('md')]: {
             padding: '50px 10px'
-        }
+        },
     }))
 
     const ShowCase = styled(Box)(({ theme }) => ({
@@ -65,7 +64,7 @@ const Portfoilo = () => {
         height: '20%',
         bottom: '0',
         color: "white",
-        opacity: show?"1":"0",
+        opacity: show ? "1" : "0",
         transition: 'all 1s',
         display: 'flex',
         flexDirection: 'column',
@@ -80,18 +79,12 @@ const Portfoilo = () => {
             <HeaderTitle title={'Latest Projects'} />
             <ShowCase>
                 {
-                    projects.map(({ name, img, live, code_client, code_server,id }) => (
+                    projects.map(({ name, img, live, code_client, code_server, id }) => (
                         <Link href={live} target="_blank" key={name}>
                             <Box>
                                 <ImageLayout
-                                    onMouseEnter={() => {
-                                        setShow(true),
-                                        setIds(id)
-                                    }}
-                                    onMouseLeave={() => {
-                                        setShow(false),
-                                        setIds(null)
-                                    }}
+                                    onMouseEnter={() => setShow(true)}
+                                    onMouseLeave={() => setShow(false)}
                                     sx={{
                                         backgroundImage: `url(${img})`,
                                         backgroundPosition: 'top',
