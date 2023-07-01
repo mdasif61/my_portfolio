@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import AsideNav from "./Shared/AsideNav";
 import { styled } from "@mui/system";
 import Home from "../Home/Home";
@@ -10,10 +10,13 @@ import { useContext } from "react";
 import Portfoilo from "../Pages/Portfoilo";
 import Blog from "../Pages/Blog";
 import Contact from "../Pages/Contact";
+import { Facebook, LinkedIn, Mail } from "@mui/icons-material";
 
 const Main = () => {
 
-    const {open}=useContext(NavContext)
+    const theme=useTheme()
+
+    const { open } = useContext(NavContext)
 
     const FullBody = styled(Box)(() => ({
         display: 'flex',
@@ -24,7 +27,7 @@ const Main = () => {
     }))
 
     const AsideLinks = styled(Box)(({ theme }) => ({
-        width: '7%',
+        width: '10%',
         height: '100vh',
         position: 'sticky',
         backgroundColor: '#1E1E1E',
@@ -33,20 +36,59 @@ const Main = () => {
         zIndex: '1',
         borderRight: '2px solid white',
         [theme.breakpoints.down('md')]: {
-            left: open?'0px':'-200px',
-            position:'fixed',
-            zIndex:'50',
-            width:'auto'
+            left: open ? '0px' : '-200px',
+            position: 'fixed',
+            zIndex: '50',
+            width: 'auto'
         }
     }))
 
     const MainBody = styled(Box)(({ theme }) => ({
-        width: '93%',
+        width: '90%',
         [theme.breakpoints.down('md')]: {
             width: '100%',
             position: 'relative'
         }
     }))
+
+    const FooterLayout = styled(Box)(({ theme }) => ({
+        width:'100%',
+        backgroundColor: '#121212',
+        padding: '50px',
+        color: 'white',
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        [theme.breakpoints.down('md')]: {
+            flexDirection: 'column'
+        }
+    }))
+
+    const FooterLink = [
+        {
+            path: 'home',
+            title: 'Home',
+        },
+        {
+            path: 'about',
+            title: 'About Me',
+        },
+        {
+            path: 'services',
+            title: 'Services',
+        },
+        {
+            path: 'portfolio',
+            title: 'Portfolio',
+        },
+        {
+            path: 'blog',
+            title: 'Blog',
+        },
+        {
+            path: 'contact',
+            title: 'Contact',
+        }
+    ]
 
 
     return (
@@ -63,6 +105,40 @@ const Main = () => {
                     <Portfoilo></Portfoilo>
                     <Blog></Blog>
                     <Contact></Contact>
+                    <FooterLayout>
+                        <Box sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}>
+                            <Typography sx={{
+                                padding:'10px',
+                                borderRight:'1px solid white'
+                            }} variant="h5">MD ASIF</Typography>
+                            <Box sx={{
+                                padding:'10px'
+                            }}>
+                                <LinkedIn sx={{marginRight:'10px'}} />
+                                <Facebook sx={{marginRight:'10px'}} />
+                                <Mail sx={{marginRight:'10px'}} />
+                            </Box>
+                        </Box>
+                        <Box>
+                            <ul style={{ display: 'flex', flexWrap:'wrap'}}>
+                                {
+                                    FooterLink.map(({ path, title }) => (
+                                        <li style={{ listStyle: 'none', margin: '10px 10px' }} key={path} id={path}><a onMouseOver={e => e.target.style.color = "orangered"} onMouseOut={e => e.target.style.color = "#969696"} style={{ textDecoration: 'none', color: '#969696' }} href={`/#${path}`}>{title}</a></li>
+                                    ))
+                                }
+                            </ul>
+                        </Box>
+                    </FooterLayout>
+                    <Typography paragraph sx={{
+                        backgroundColor:'#121212',
+                        color:'#969696',
+                        padding:'20px',
+                        textAlign:'center'
+                    }}>2023 Chittagong, Bangladesh. All rights reserved</Typography>
                 </Box>
             </MainBody>
         </FullBody>
