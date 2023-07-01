@@ -14,7 +14,7 @@ import { Facebook, LinkedIn, Mail } from "@mui/icons-material";
 
 const Main = () => {
 
-    const theme=useTheme()
+    const theme = useTheme()
 
     const { open } = useContext(NavContext)
 
@@ -52,7 +52,7 @@ const Main = () => {
     }))
 
     const FooterLayout = styled(Box)(({ theme }) => ({
-        width:'100%',
+        width: '100%',
         backgroundColor: '#121212',
         padding: '50px',
         color: 'white',
@@ -112,19 +112,19 @@ const Main = () => {
                             alignItems: 'center'
                         }}>
                             <Typography sx={{
-                                padding:'10px',
-                                borderRight:'1px solid white'
+                                padding: '10px',
+                                borderRight: '1px solid white'
                             }} variant="h5">MD ASIF</Typography>
                             <Box sx={{
-                                padding:'10px'
+                                padding: '10px'
                             }}>
-                                <LinkedIn sx={{marginRight:'10px'}} />
-                                <Facebook sx={{marginRight:'10px'}} />
-                                <Mail sx={{marginRight:'10px'}} />
+                                <a href="https://www.linkedin.com/in/asif-ikbal-699709270/" target="blank"><LinkedIn sx={{ marginRight: '10px', color:'white' }} /></a>
+                                <a href="https://web.facebook.com/asifikbal61" target="blank"><Facebook sx={{ marginRight: '10px', color:'white' }} /></a>
+                                <a href="mailto:asifikbal1361@gmail.com" target="blank"><Mail sx={{ marginRight: '10px', color:'white' }} /></a>
                             </Box>
                         </Box>
                         <Box>
-                            <ul style={{ display: 'flex', flexWrap:'wrap'}}>
+                            <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
                                 {
                                     FooterLink.map(({ path, title }) => (
                                         <li style={{ listStyle: 'none', margin: '10px 10px' }} key={path} id={path}><a onMouseOver={e => e.target.style.color = "orangered"} onMouseOut={e => e.target.style.color = "#969696"} style={{ textDecoration: 'none', color: '#969696' }} href={`/#${path}`}>{title}</a></li>
@@ -134,10 +134,10 @@ const Main = () => {
                         </Box>
                     </FooterLayout>
                     <Typography paragraph sx={{
-                        backgroundColor:'#121212',
-                        color:'#969696',
-                        padding:'20px',
-                        textAlign:'center'
+                        backgroundColor: '#121212',
+                        color: '#969696',
+                        padding: '20px',
+                        textAlign: 'center'
                     }}>2023 Chittagong, Bangladesh. All rights reserved</Typography>
                 </Box>
             </MainBody>
