@@ -1,6 +1,8 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, useTheme } from "@mui/material";
 
-const CustomButton = ({ btnText, variant, resume, path }) => {
+const CustomButton = ({ btnText, variant, resume, path}) => {
+
+    const theme=useTheme()
 
     return (
         <Box sx={{ marginTop: '20px' }}>

@@ -1,11 +1,13 @@
 import { styled } from "@mui/system";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
 import myImg from '../../public/images/my-image.png'
 import CustomButton from "../components/CustomButton";
 import waveThree from '../../public/wavePNG.png'
 
 const Home = () => {
+
+    const theme=useTheme()
 
     const HomeLayout = styled(Box)(({ theme }) => ({
         minHeight: '100vh',
@@ -16,10 +18,10 @@ const Home = () => {
             flexDirection: 'column-reverse',
         },
         backgroundImage: `url(${waveThree})`,
-        backgroundPosition:'bottom',
+        backgroundPosition: 'bottom',
         backgroundSize: 'contain',
         backgroundRepeat: "no-repeat",
-        borderBottom:'2px solid orangered'
+        borderBottom: '2px solid orangered'
     }))
 
     const HomeText = styled(Box)(({ theme }) => ({
@@ -73,9 +75,10 @@ const Home = () => {
                     repeat={Infinity}
                 /></Typography>
 
-                <Box sx={{ display: 'flex' }}>
+                <Box sx={{ display: 'flex'}}>
                     <CustomButton btnText={'My Work'} variant='contained' />
                     <CustomButton btnText={'Hire Me'} variant='outlined' />
+                    <CustomButton path="../../public/IKBAL_HOSSAIN.pdf" resume={'IKBAL_HOSSAIN.pdf'} variant={'contained'} btnText={'Download CV'} />
                 </Box>
 
             </HomeText>
