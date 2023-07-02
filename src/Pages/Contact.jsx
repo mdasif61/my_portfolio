@@ -2,11 +2,25 @@ import { Box, Button, useTheme } from "@mui/material";
 import HeaderTitle from "../components/HeaderTitle";
 import { styled } from "@mui/system";
 import emailBg from '../../public/images/emailBG.png'
+import emailjs from '@emailjs/browser';
+import { useRef } from "react";
 
 
 const Contact = () => {
-
     const theme = useTheme()
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_7lzliyo', 'template_ae6vig4', form.current, 'G4ka8Tou1aTWztSmN')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
 
     const ContactLayout = styled(Box)(({ theme }) => ({
         backgroundColor: 'white',
@@ -37,8 +51,8 @@ const Contact = () => {
 
     const FormStyle = {
         width: '50%',
-        [theme.breakpoints.down('md')]:{
-            width:'100%'
+        [theme.breakpoints.down('md')]: {
+            width: '100%'
         },
         display: 'flex',
         flexDirection: 'column',
@@ -51,7 +65,7 @@ const Contact = () => {
             <HeaderTitle title={'Get In Touch'} titleColor={'black'} />
             <ContactBody>
                 <Box sx={FormStyle}>
-                    <form style={{width:'100%'}}>
+                    <form ref={form} onSubmit={sendEmail} style={{ width: '100%' }}>
                         <div style={{ width: '100%' }}>
                             <Box sx={{ width: '100%' }}>
                                 <input style={InputStyle} type="text" name="name" id="" placeholder="Name*" />

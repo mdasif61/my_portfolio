@@ -123,7 +123,7 @@ const About = () => {
                                 </Box>
                             </Box>
                         </MyInfo>
-                        <CustomButton variant={'contained'} btnText={'Download CV'} />
+                        <CustomButton path="../../public/IKBAL_HOSSAIN.pdf" resume={'IKBAL_HOSSAIN.pdf'} variant={'contained'} btnText={'Download CV'} />
                     </Box>
 
                 </AboutText>
